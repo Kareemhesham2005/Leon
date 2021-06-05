@@ -418,6 +418,7 @@ body {
 @media (max-width: 768px) {
   .contact .info .label {
     font-size: 30px;
+    letter-spacing: 0px;
   }
   .contact .info .link {
     font-size: 22px;
