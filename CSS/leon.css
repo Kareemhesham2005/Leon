@@ -97,15 +97,13 @@ body {
   align-items: center;
 }
 
-.header .logo {
+.header .logo img {
   width: 60px;
 }
 
 .header .links {
   position: relative;
-}
-.header .links:hover .icon span:nth-child(2) {
-  width: 100%;
+  cursor: pointer;
 }
 .header .links .icon {
   display: flex;
@@ -117,22 +115,36 @@ body {
   margin-bottom: 5px;
   background-color: #333;
   height: 2px;
-}
-.header .links .icon span:first-child {
   width: 100%;
-}
-.header .links .icon span:nth-child(2) {
-  width: 60%;
   transition: var(--main-duration);
   -webkit-transition: var(--main-duration);
   -moz-transition: var(--main-duration);
   -ms-transition: var(--main-duration);
   -o-transition: var(--main-duration);
 }
-
-.header .links .icon span:nth-child(3) {
-  width: 100%;
+.header .links .icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 9px);
+  -webkit-transform: rotate(45deg) translate(8px, 9px);
+  -moz-transform: rotate(45deg) translate(8px, 9px);
+  -ms-transform: rotate(45deg) translate(8px, 9px);
+  -o-transform: rotate(45deg) translate(8px, 9px);
 }
+.header .links .icon.open span:nth-child(2) {
+  background: transparent;
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+}
+.header .links .icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(0px, -2px);
+  -webkit-transform: rotate(-45deg) translate(0px, -2px);
+  -moz-transform: rotate(-45deg) translate(0px, -2px);
+  -ms-transform: rotate(-45deg) translate(0px, -2px);
+  -o-transform: rotate(-45deg) translate(0px, -2px);
+}
+
 .header .links ul {
   list-style: none;
   background-color: var(--section-background);
@@ -171,14 +183,13 @@ body {
 .header .links ul li:not(:last-child) a {
   border-bottom: 1px solid #ddd;
 }
-.header .links:hover ul {
-  display: block;
-}
 /* End Header */
 /* Start Landing */
 .landing {
   background-image: url(../images/landing7.jpg);
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
   height: 100vh;
 }
 .landing .intro-text {
